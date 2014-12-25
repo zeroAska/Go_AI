@@ -36,7 +36,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>  /* for rand() and srand() */
-
+#include <time.h>
 #include "new_board.h"
 #include "gtp.h"
 
@@ -58,7 +58,7 @@ static int gtp_genmove(char *s);
 static int gtp_final_score(char *s);
 static int gtp_final_status_list(char *s);
 static int gtp_showboard(char *s);
-
+static int gtp_mc(char *s);
 /* List of known commands. */
 static struct gtp_command commands[] = {
   {"protocol_version",    gtp_protocol_version},
@@ -78,13 +78,14 @@ static struct gtp_command commands[] = {
   {"final_score",         gtp_final_score},
   {"final_status_list",   gtp_final_status_list},
   {"showboard",        	  gtp_showboard},
+  {"MC",				  gtp_mc},
   {NULL,                  NULL}
 };
 
 board_t board;
 int main(int argc, char **argv)
 {
-  unsigned int random_seed = 1;
+  unsigned int random_seed = time(NULL);
 
   /* Optionally a random seed can be passed as an argument to the program. */
   if (argc > 1)
@@ -112,7 +113,12 @@ gtp_protocol_version(char *s)
 {
   return gtp_success("2");
 }
-
+static int
+gtp_mc(char *s)
+{
+	printf("%d\n", MtC(4, 8, 1, 0));
+	return 0;
+}
 static int
 gtp_name(char *s)
 {
@@ -323,7 +329,7 @@ gtp_genmove(char *s)
 static int
 gtp_final_score(char *s)
 {
-  float score = board.komi;
+  double score = board.komi;
   int i, j;
 
   board.compute_final_status();
@@ -430,6 +436,8 @@ gtp_showboard(char *s)
   letters();
   return gtp_finish_response();
 }
+
+
 
 
 /*

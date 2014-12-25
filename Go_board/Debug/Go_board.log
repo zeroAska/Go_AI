@@ -1,22 +1,24 @@
-﻿Build started 2014-12-24 20:29:34.
-     1>Project "C:\Users\Ray\Desktop\Go\Go_board\Go_board\Go_board.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014-12-25 23:15:36.
+     1>Project "C:\Users\Ray\Desktop\Go\Go_board\Go_AI\Go_board\Go_board.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt game.cpp interface.c new_board.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt gtp.c interface.c game.cpp montecarlo.cpp new_board.cpp
          new_board.cpp
+         montecarlo.cpp
+     1>c:\users\ray\desktop\go\go_board\go_ai\go_board\montecarlo.cpp(63): warning C4101: 'moves' : unreferenced local variable
          game.cpp
-         Generating Code...
-         Compiling...
          interface.c
-     1>c:\users\ray\desktop\go\go_board\go_board\interface.c(326): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\ray\desktop\go\go_board\go_ai\go_board\interface.c(88): warning C4244: 'initializing' : conversion from 'time_t' to 'unsigned int', possible loss of data
+         gtp.c
          Generating Code...
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ray\Desktop\Go\Go_board\Debug\Go_board.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ray\Desktop\Go\Go_board\Debug\Go_board.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ray\Desktop\Go\Go_board\Debug\Go_board.lib" /MACHINE:X86 Debug\gtp.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ray\Desktop\Go\Go_board\Go_AI\Debug\Go_board.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ray\Desktop\Go\Go_board\Go_AI\Debug\Go_board.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ray\Desktop\Go\Go_board\Go_AI\Debug\Go_board.lib" /MACHINE:X86 Debug\gtp.obj
          Debug\interface.obj
          Debug\game.obj
+         Debug\montecarlo.obj
          Debug\new_board.obj
-         Go_board.vcxproj -> C:\Users\Ray\Desktop\Go\Go_board\Debug\Go_board.exe
-     1>Done Building Project "C:\Users\Ray\Desktop\Go\Go_board\Go_board\Go_board.vcxproj" (Build target(s)).
+         Go_board.vcxproj -> C:\Users\Ray\Desktop\Go\Go_board\Go_AI\Debug\Go_board.exe
+     1>Done Building Project "C:\Users\Ray\Desktop\Go\Go_board\Go_AI\Go_board\Go_board.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:11.92
+Time Elapsed 00:00:03.22

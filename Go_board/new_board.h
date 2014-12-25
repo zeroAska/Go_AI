@@ -13,8 +13,8 @@
 
 /* Macro to find the opposite color. */
 #define OTHER_COLOR(color) (WHITE + BLACK - (color))
-int deltai[4] = { -1, 1, 0, 0 };
-int deltaj[4] = { 0, 0, -1, 1 };
+extern int deltai[4];
+extern int deltaj[4];
 
 enum block_attr
 {
@@ -23,7 +23,7 @@ enum block_attr
 	TIGER,
 	WEAK,
 	FREEDOM,
-	MC
+	MontC
 };
 
 enum point_type
@@ -71,13 +71,13 @@ public:
 	int ko_i, ko_j;
 	block * all_blocks[MAX_BOARD*MAX_BOARD];
 	/* the list for all the blocks */
-	std::list<block> block_list;
-	
-	board_t(int size = 13);
+	std::list<block*> block_list;
+	board_t();
+	board_t(int size);
 	board_t(const board_t & old_board);
 	const board_t & operator =(const board_t& old_board);
 	~board_t();
-
+	void boardDel();
 /* board functions */
 	/* original static functions */
 	int  pass_move(int i, int j);
@@ -105,14 +105,14 @@ public:
 	int valid_fixed_handicap(int handicap);
 	void place_fixed_handicap(int handicap);
 	void place_free_handicap(int handicap);
-	void get_available_moves(int color, int &num_moves, int(&moves)[MAX_BOARD * MAX_BOARD]);
+	//void get_available_moves(int color, int &num_moves, int(&moves)[MAX_BOARD * MAX_BOARD]);
 
 
 };
 
 extern board_t board;
 
-int MC(int i, int j, int color, int is_forked);
+int MtC(int i, int j, int color, int is_forked);
 
 
 #endif
